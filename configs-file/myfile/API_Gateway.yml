@@ -1,6 +1,6 @@
 spring:
   application:
-    name: api-gateway
+    name:API_Gateway
   data:
     redis:
       host: localhost
@@ -27,7 +27,7 @@ spring:
             - name: RequestRateLimiter
               args:
                 redis-rate-limiter.replenishRate: 5
-                redis-rate-limiter.burstCapacity: 5
+                redis-rate-limiter.burstCapacity: 0
                 redis-rate-limiter.requestedTokens: 1
                 key-resolver: "#{@ipKeyResolver}"
 eureka:
@@ -38,4 +38,4 @@ eureka:
     register-with-eureka: true
 
 server:
-  port: 8085
+  port: 8080
